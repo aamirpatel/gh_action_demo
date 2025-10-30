@@ -1,8 +1,15 @@
 name: Context LBG
 
+run-name: Context | ${{inputs.DEBUG}}
 
 on:
  workflow_dispatch:
+  inputs:
+   DEBUG:
+    type: boolean
+    default: false
+   
+   
 jobs:
  context:
   runs-on: ${{matrix.os}}
