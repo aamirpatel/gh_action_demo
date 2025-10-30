@@ -9,17 +9,15 @@ jobs:
   strategy:
    matrix:
     os: [ubuntu-latest , windows-latest]
+    java-version: [17,21,26]
   steps: 
-  - name: Context
+  - name: Setup Java JDK
+    uses: actions/setup-java@v5.0.0
+    with:
+     java-version: ${{matrix.java-version}}
+     distribution:  microsoft
   
-    run: |
-     echo "Author name ${{github.actor}}"
-     echo "Event is ${{github.event_name}}"
-     echo "ref value ${{github.ref}}"
-     echo "Commit SHA value ${{github.SHA}}"
-     echo "Run id value ${{github.run_id}}"
-     echo "Run number is ${{github.run_number}}"
-     echo "ENV value ${{env.MY_VAR}}"
+
 
      
      
