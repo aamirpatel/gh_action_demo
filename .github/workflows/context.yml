@@ -1,0 +1,17 @@
+name: Context LBG
+
+on:
+ workflow_dispatch:
+jobs:
+ context:
+  runs-on: ubuntu-latest
+  steps: 
+  - name: Context
+    run: |
+     echo "Author name ${{github.actor}}"
+     echo "Event is ${{github.event_name}}"
+     echo "ref value ${{github.ref}}"
+     echo "Commit SHA value ${{github.SHA}}"
+     echo "Run id value ${{github.run_id}}"
+     echo "Run number is ${{github.run_number}}"
+ 
