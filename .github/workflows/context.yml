@@ -22,7 +22,7 @@ jobs:
      echo "Run number is ${{github.run_number}}"
      echo "ENV value ${{env.MY_VAR}}"
   - name: Env
-    run: echo "ENV value ${{vars.MY_VAR}}" 
+    run: echo "Secrets is ${{secrets.PASSWORD}}" 
      
      
  
