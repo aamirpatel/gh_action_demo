@@ -1,4 +1,4 @@
-name: "Custom Docker Build Action"
+name: "Custom Docker Build Action "
 description: "Builds a Docker image inside GitHub Actions"
 author: "Your Name"
 
