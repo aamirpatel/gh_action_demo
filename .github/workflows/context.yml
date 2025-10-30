@@ -1,18 +1,17 @@
 name: Context LBG
 
-env:
- MY_VAR: "workflow"
+
 on:
  workflow_dispatch:
 jobs:
  context:
-  runs-on: ubuntu-latest
-  env:
-   MY_VAR: "jobs"
+  runs-on: ${{matrix.os}}
+  strategy:
+   matrix:
+    os: [ubuntu-latest , windows-latest]
   steps: 
   - name: Context
-    env:
-     MY_VAR: "steps"
+  
     run: |
      echo "Author name ${{github.actor}}"
      echo "Event is ${{github.event_name}}"
@@ -21,8 +20,7 @@ jobs:
      echo "Run id value ${{github.run_id}}"
      echo "Run number is ${{github.run_number}}"
      echo "ENV value ${{env.MY_VAR}}"
-  - name: Env
-    run: echo "Secrets is ${{secrets.PASSWORD}}" 
+
      
      
  
