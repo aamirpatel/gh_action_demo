@@ -2,7 +2,9 @@ name: Environment LBG
 
 
 on:
- workflow_dispatch:
+ push:
+  branches:
+    b1
  
     
 jobs:
