@@ -4,7 +4,7 @@ name: Environment LBG
 on:
  push:
   branches:
-    b1
+    master
  
     
 jobs:
