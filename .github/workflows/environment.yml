@@ -6,25 +6,28 @@ on:
  
     
 jobs:
- environment-ci:
+ dev:
   runs-on: ubuntu-latest
   environment: dev
   steps:
    - name: Print
      run: echo "Environment is ${{vars.USER}}"
  test:
+  needs: dev
   runs-on: ubuntu-latest
   environment: test
   steps:
    - name: Print
      run: echo "Environment is ${{vars.USER}}"
  staging:
+   needs: [dev,test]
    runs-on: ubuntu-latest
    environment: staging
    steps:
    - name: Print
      run: echo "Environment is ${{vars.USER}}"
  prod:
+   needs: [dev,test,staging]
    runs-on: ubuntu-latest
    environment: prod
    steps:
