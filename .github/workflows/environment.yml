@@ -3,15 +3,30 @@ name: Environment LBG
 
 on:
  workflow_dispatch:
-  inputs:
-   TAR_ENVIRONMENT:
-    type: environment
-    default: dev
+ 
     
 jobs:
  environment-ci:
   runs-on: ubuntu-latest
-  environment: ${{inputs.TAR_ENVIRONMENT}}
+  environment: dev
   steps:
+   - name: Print
+     run: echo "Environment is ${{vars.USER}}"
+ test:
+  runs-on: ubuntu-latest
+  environment: test
+  steps:
+   - name: Print
+     run: echo "Environment is ${{vars.USER}}"
+ staging:
+   runs-on: ubuntu-latest
+   environment: staging
+   steps:
+   - name: Print
+     run: echo "Environment is ${{vars.USER}}"
+ prod:
+   runs-on: ubuntu-latest
+   environment: prod
+   steps:
    - name: Print
      run: echo "Environment is ${{vars.USER}}"
