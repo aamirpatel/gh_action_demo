@@ -1,10 +1,10 @@
-name: First Workflow - LBG
+name: First Workflow - demo
 
 on:
   workflow_dispatch
 jobs:
  build:
-   runs-on: Self-hosted
+   runs-on: ubuntu-latest
    steps:
     - name: Print
       run: echo "Build"
