@@ -12,7 +12,7 @@ jobs:
   
  test:
   needs: build
-  runs-on:  Self-hosted
+  runs-on:  ubuntu-latest
   steps:
     - name: Print
       run: echo "test"
@@ -26,7 +26,7 @@ jobs:
  
  deploy:
    needs: [ build, test, staging]
-   runs-on:  Self-hosted
+   runs-on:  ubuntu-latest
    steps:
     - name: Print
       run: echo "deploy"
