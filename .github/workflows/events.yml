@@ -19,7 +19,7 @@ jobs:
 
  staging:
    needs: [ build, test]
-   runs-on:  Self-hosted
+   runs-on:  ubuntu-latest
    steps:
     - name: Print
       run: echo "staging"
