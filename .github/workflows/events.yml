@@ -12,14 +12,14 @@ jobs:
   
  test:
   needs: build
-  runs-on:  ubuntu-latest
+  runs-on:  windows-latest
   steps:
     - name: Print
       run: echo "test"
 
  staging:
    needs: [ build, test]
-   runs-on:  ubuntu-latest
+   runs-on:  macos-15
    steps:
     - name: Print
       run: echo "staging"
